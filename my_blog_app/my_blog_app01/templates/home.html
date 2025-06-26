@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block content%}
+
+<h1>Posts</h1>
+<ul class="list-group">
+    {% for post in object_list %}
+        <li class="list-group-item">
+            <a href="{% url 'article_detail' pk=post.pk %}">
+                {{ post.title }}
+            </a> - {{post.author.username}}
+            <br/>
+            {{ post.body|truncatechars:200 }}
+        </li>
+    {% endfor %}
+</ul>    
+
+{% endblock %}
