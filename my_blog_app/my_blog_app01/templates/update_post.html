@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+{% block content%}
+
+<h1>Update post....</h1>
+
+<div class = "form-group">
+<form method="POST" action="{% url 'add_post' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-secondary">Edit Post</button>
+</div>
+{% endblock %}
