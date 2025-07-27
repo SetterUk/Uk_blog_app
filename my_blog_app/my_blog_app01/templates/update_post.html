@@ -1,5 +1,6 @@
 {% extends "base.html"%}
 {% block content%}
+{%if user.is_authenticated%}
 
 <h1>Update post....</h1>
 
@@ -9,4 +10,10 @@
     {{ form.as_p }}
     <button type="submit" class="btn btn-secondary">Edit Post</button>
 </div>
+{%else%}
+<p>You need to be logged in to update a post.</p>
+<a href="{%url 'login'%}" class="btn btn-primary">Login</a>
+{%endif%}
+
+
 {% endblock %}
