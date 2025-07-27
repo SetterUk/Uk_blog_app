@@ -1,13 +1,13 @@
 {% extends "base.html"%}
 {% block content%}
 {%if user.is_authenticated%}
-<h1>Add Blog</h1>
+<h1>Add Category..</h1>
 
 <div class = "form-group">
-<form method="POST" action="{% url 'add_post' %}">
+<form method="POST" action="{% url 'add_category' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-secondary">Add Post</button>
+    <button type="submit" class="btn btn-secondary">Add Category</button>
 </div>
 {%endif%}
 {% endblock %}
